@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>MapBox 本地化部署</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--本地加载的js及css文件-->
+    <script src='http://127.0.0.1:8081/js/mapbox-gl.js?v=2.4.1'></script>
+    <link href='http://127.0.0.1:8081/css/mapbox-gl.css?v=2.4.1' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic29sYXJjZWxsc2t5IiwiYSI6ImNrbmFmOXVjdjExZ3oycnRhY3ZqNWJqNHcifQ.INN_v0VVzC2KNQVL-nvMLg';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: {
+                version: 8,
+                name: "Mapbox Streets",
+                sprite: "http://127.0.0.1:8081/images/sprite",//图标
+                glyphs: "http://127.0.0.1:8081/font/{fontstack}/{range}.pbf",//字体文件
+                sources: {
+                    "osm-tiles": {
+                        "type": "raster",
+                        'tiles': [
+                            "http://mt2.google.cn/vt/lyrs=s@167000000&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}"//谷歌路径
+                            // "http://192.168.1.26:9999/data/map/{z}/{x}/{y}.png"//本地路径
+                        ],
+                        'tileSize': 256
+                    },
+                },
+                layers: [{
+                    id: "simple-tiles",
+                    type: "raster",
+                    source: "osm-tiles",
+                    minzoom: 0,
+                    maxzoom: 22
+                }]
+            }, //hosted style id
+            center: [121, 31], // starting position
+            zoom: 0 // starting zoom
+        });
+    </script>
+</body>
+
+</html>
