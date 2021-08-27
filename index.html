@@ -32,14 +32,15 @@
             style: {
                 version: 8,
                 name: "Mapbox Streets",
-                sprite: "http://127.0.0.1:8081/images/sprite",//图标
-                glyphs: "http://127.0.0.1:8081/font/{fontstack}/{range}.pbf",//字体文件
+                sprite: "http://localhost:8081/images/sprite",//图标
+                glyphs: "http://localhost:8081/font/{fontstack}/{range}.pbf",//字体文件
                 sources: {
-                    "osm-tiles": {
+                    osmTiles: {
                         type: "raster",
                         tiles: [
-                            "http://wprd01.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7"//谷歌路径
+                            "http://map.geoq.cn/arcgis/rest/services/ChinaOnlineCommunity/MapServer/WMTS/tile/1.0.0/ChinaOnlineCommunity/default/default028mm/{z}/{y}/{x}.png"
                             // "http://192.168.1.26:9999/data/map/{z}/{x}/{y}.png"//本地路径
+                            // https://api.mapbox.com/v4/mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2/{z}/{y}/{x}.vector.pbf?sku=101syWvO08ucC&access_token=" + mapboxgl.accessToken
                         ],
                         tileSize: 256
                     },
@@ -47,8 +48,8 @@
                 layers: [{
                     id: "simple-tiles",
                     type: "raster",
-                    source: "osm-tiles",
-                    minzoom: 5,
+                    source: "osmTiles",
+                    minzoom: 0,
                     maxzoom: 22
                 }]
             }, //hosted style id
