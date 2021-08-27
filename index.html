@@ -36,24 +36,24 @@
                 glyphs: "http://127.0.0.1:8081/font/{fontstack}/{range}.pbf",//字体文件
                 sources: {
                     "osm-tiles": {
-                        "type": "raster",
-                        'tiles': [
-                            "http://mt2.google.cn/vt/lyrs=s@167000000&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}"//谷歌路径
+                        type: "raster",
+                        tiles: [
+                            "http://wprd01.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7"//谷歌路径
                             // "http://192.168.1.26:9999/data/map/{z}/{x}/{y}.png"//本地路径
                         ],
-                        'tileSize': 256
+                        tileSize: 256
                     },
                 },
                 layers: [{
                     id: "simple-tiles",
                     type: "raster",
                     source: "osm-tiles",
-                    minzoom: 0,
+                    minzoom: 5,
                     maxzoom: 22
                 }]
             }, //hosted style id
-            center: [121, 31], // starting position
-            zoom: 0 // starting zoom
+            center: [108.423256, 34.235693], // starting position
+            zoom: 5 // starting zoom
         });
     </script>
 </body>
