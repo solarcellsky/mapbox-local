@@ -40,7 +40,7 @@
                         tiles: [
                             "http://map.geoq.cn/arcgis/rest/services/ChinaOnlineCommunity/MapServer/WMTS/tile/1.0.0/ChinaOnlineCommunity/default/default028mm/{z}/{y}/{x}.png"
                             // "http://192.168.1.26:9999/data/map/{z}/{x}/{y}.png"//本地路径
-                            // https://api.mapbox.com/v4/mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2/{z}/{y}/{x}.vector.pbf?sku=101syWvO08ucC&access_token=" + mapboxgl.accessToken
+                            // "https://api.mapbox.com/v4/mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2/{z}/{y}/{x}.vector.pbf?sku=101syWvO08ucC&access_token=" + mapboxgl.accessToken
                         ],
                         tileSize: 256
                     },
@@ -52,8 +52,8 @@
                     minzoom: 0,
                     maxzoom: 22
                 }]
-            }, //hosted style id
-            center: [108.423256, 34.235693], // starting position
+            },
+            center: [108.423256, 34.235693],
             zoom: 5 // starting zoom
         });
     </script>
