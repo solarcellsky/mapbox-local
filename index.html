@@ -6,8 +6,8 @@
     <title>MapBox 本地化部署</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <!--本地加载的js及css文件-->
-    <script src='http://127.0.0.1:8081/js/mapbox-gl.js?v=2.4.1'></script>
-    <link href='http://127.0.0.1:8081/css/mapbox-gl.css?v=2.4.1' rel='stylesheet' />
+    <script src='/js/mapbox-gl.js?v=2.4.1'></script>
+    <link href='/css/mapbox-gl.css?v=2.4.1' rel='stylesheet' />
     <style>
         body {
             margin: 0;
@@ -32,8 +32,8 @@
             style: {
                 version: 8,
                 name: "Mapbox Streets",
-                sprite: "http://localhost:8081/images/sprite",//图标
-                glyphs: "http://localhost:8081/font/{fontstack}/{range}.pbf",//字体文件
+                sprite: "http://localhost:8080/images/sprite",//图标
+                glyphs: "http://localhost:8080/font/{fontstack}/{range}.pbf",//字体文件
                 sources: {
                     osmTiles: {
                         type: "raster",
